@@ -1,4 +1,5 @@
 /* CSS HEX */
+:root{
 --charleston-green: #152528ff;
 --midnight-green-eagle-green: #08485eff;
 --pacific-blue: #3cb0cdff;
@@ -9,3 +10,10 @@
 --emerald: #21c063ff;
 --slimy-green: #229631ff;
 --lincoln-green: #0c5a23ff;
+}
+
+
+#title  { 
+    background-color: var(--lincoln-green);
+    background-image: url('./Assets/AdobeStock_274219327.jpeg'); 
+}
