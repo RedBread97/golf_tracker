@@ -27,10 +27,10 @@ ScoreCard.init (
             type: Datatypes.INTEGER,
             allowNull: false,
         },
-        scoreImage: {
-            type:Datatypes.STRING,
-            allowNull:  true,
-        },
+        // scoreImage: {
+        //     type:Datatypes.STRING,
+        //     allowNull:  true,
+        // },
         notes: {
             type: DataTypes.STRING,
             allowNull: true,
