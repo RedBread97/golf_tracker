@@ -13,7 +13,8 @@
 }
 
 
-#title  { 
-    background-color: var(--lincoln-green);
-    background-image: url('./Assets/AdobeStock_274219327.jpeg'); 
+.title  { 
+    background-image: url('./AdobeStock_274219327.jpg')!important;
+    height:300px ;
+    background-size: 100% auto;
 }
