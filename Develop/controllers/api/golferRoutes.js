@@ -6,7 +6,6 @@ router.get('/', async (req, res) => {
 
     try {
         const golferData = await Golfer.findAll({});
-        // console.log(studentData);
         const plainGolferData = golferData.map(stu => stu.get({plain:true}))
         res.render('homepage', { golfers: plainGolferData })
     } catch (err) {
