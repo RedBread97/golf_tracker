@@ -22,7 +22,14 @@ Golfer.init(
       validate: {
         isEmail: true,
       },
-    }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
+    },
   },
   {
     sequelize,
@@ -30,7 +37,7 @@ Golfer.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'golfer',
-  }
+  },
 );
 
 module.exports = Golfer;
