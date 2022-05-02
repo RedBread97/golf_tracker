@@ -24,11 +24,11 @@ ScoreCard.init (
             allowNull: false,
         },
         roundScore: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         // scoreImage: {
-        //     type:Datatypes.STRING,
+        //     type:DataTypes.STRING,
         //     allowNull:  true,
         // },
         notes: {
