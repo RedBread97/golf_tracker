@@ -32,7 +32,7 @@ app.use(routes);
 
 // === Authentication with Google - Middleware === 
 const isLoggedIn = (req, res, next) => {
-  if (req.user) {
+  if (req.golfer) {
       next();
   } else {
       res.sendStatus(401);
@@ -43,16 +43,15 @@ const isLoggedIn = (req, res, next) => {
 
 app.get('/', (req, res) => res.send('You are not logged in'));
 app.get('/failed', (req, res) => res.send("You failed to log in"));
-app.get('/good', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.displayName}`))
+app.get('/homepage', isLoggedIn, (req, res) => res.send(`Welcome ${req.golfer.displayName}`));
 
-app.get('/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })); //Add photo?
+app.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] })); //Add photo?
 
 app.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/failed' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/good');
+    res.redirect('/homepage');
   });
 
   //Log out route
