@@ -14,7 +14,32 @@
 
 
 .title  { 
-    background-image: url('./AdobeStock_274219327.jpg')!important;
-    height:300px ;
-    background-size: 100% auto;
+    background-image: url('./AdobeStock_182403935.jpeg')!important;
+    height:100px ;
+    background-size: 100%;
+    background-repeat: none;
+    text-align: center;
+    color: var(--mint-green);
+    background-color: var(--lincoln-green);
+
+}
+
+.title>h1{
+    padding: 3%;
+}
+
+#navbar{ 
+    background-color: var(--lincoln-green);
+}
+
+#navbar>a{
+    color:var(--mint-green)!important;
+}
+
+#averages{
+    align-items: center !important;
+}
+
+#average_card{
+    margin:auto;
 }
