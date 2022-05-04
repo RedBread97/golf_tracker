@@ -41,9 +41,9 @@ const isLoggedIn = (req, res, next) => {
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-app.get('/', (req, res) => res.send('You are not logged in'));
+// app.get('/', (req, res) => res.send('You are not logged in'));
 app.get('/failed', (req, res) => res.send("You failed to log in"));
-app.get('/good', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.displayName}`))
+// app.get('/good', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.displayName}`))
 
 app.get('/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })); //Add photo?
@@ -52,7 +52,7 @@ app.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/failed' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/good');
+    res.redirect('/');
   });
 
   //Log out route
@@ -63,6 +63,6 @@ app.get('/google/callback',
   })
 
 
-  sequelize.sync({ force: false }).then(() => {
+  sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });
