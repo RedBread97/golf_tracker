@@ -7,6 +7,9 @@ const cookieSession = require('cookie-session');
 const passportSetup = require('./passport-setup');
 const passport = require('passport');
 const authorization = require('./utils/auth');
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -22,22 +25,26 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 //Add cookie session npm
-app.use(cookieSession({
-  name: 'golf-session',
-  keys: ['key1', 'key2']
-}))
+// app.use(cookieSession({
+//   name: 'golf-session',
+//   keys: ['key1', 'key2']
+// }))
 
-app.use(routes);
+const sess = {
+  secret: 'secret', //Add to dot.env
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+}
+
+app.use(session(sess));
 
 
 // === Authentication with Google - Middleware === 
-const isLoggedIn = (req, res, next) => {
-  if (req.user) {
-      next();
-  } else {
-      res.sendStatus(401);
-  }
-}
+
 // app.use(passport.initialize());
 // app.use(passport.session());
 
@@ -45,8 +52,8 @@ const isLoggedIn = (req, res, next) => {
 app.get('/failed', (req, res) => res.send("You failed to log in"));
 // app.get('/good', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.displayName}`))
 
-app.get('/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })); //Add photo?
+app.get('/login',
+  passport.authenticate('google', { scope: ['profile', 'email'] })) //Add photo?
 
 app.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/failed' }),
@@ -62,7 +69,11 @@ app.get('/google/callback',
     res.redirect('/');
   })
 
+  app.use(routes);
 
   sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });
+
+
+  
