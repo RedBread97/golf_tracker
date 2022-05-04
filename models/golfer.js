@@ -6,7 +6,7 @@ class Golfer extends Model {}
 Golfer.init(
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
