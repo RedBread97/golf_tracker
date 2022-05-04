@@ -11,9 +11,11 @@ Golfer.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    googleId:{
+      type: DataTypes.STRING,
+    },
     golferName: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -22,20 +24,20 @@ Golfer.init(
       validate: {
         isEmail: true,
       },
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
-    },
+    }
+    // password: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [8],
+    //   },
+    // },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    // underscored: true,
     modelName: 'golfer',
   },
 );
