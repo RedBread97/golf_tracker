@@ -25,9 +25,10 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/scorecard', async (req, res) => {
     try {
         const dbScoreData = await ScoreCard.create({
+            date: req.body.date,
             course_name: req.body.coursename,
             round_score: req.body.roundscore,
             notes: req.body.notes

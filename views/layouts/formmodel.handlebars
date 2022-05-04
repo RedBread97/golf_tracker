@@ -1,0 +1,41 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Round
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Score Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class ="new-scorecard-form"
+                    <div class="input-group mb-3">
+                        <i class="bi bi-calendar-date input-group-text"></i>
+                        <input type="text" class="datepicker_input form-control" id="date" placeholder="Date input 3 placeholder"
+                            required aria-label="Date input 3 (using aria-label)">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FormControlInput1" class="form-label">Course Name</label>
+                        <input type="text" class="form-control" id="coursename" placeholder="Course Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FormControlInput2" class="form-label">Score</label>
+                        <input type="text" class="form-control" id="score" placeholder="Round Score">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FormControlInput3" class="form-label">Round Notes</label>
+                        <textarea class="form-control" id="notes" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
