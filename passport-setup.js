@@ -29,9 +29,9 @@ function(accessToken, refreshToken, profile, done) {
     // });
     Golfer.findOne({where: {googleId: profile.id}})
     .then((golferInfo)=> {
-        console.log(profile.id)
-        console.log (profile.displayName)
-        console.log (profile)
+        // console.log(profile.id)
+        // console.log (profile.displayName)
+        // console.log (profile)
         if(!golferInfo){
             Golfer.create({googleId:profile.id, 
                 golferName:profile.displayName,
