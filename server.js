@@ -9,6 +9,7 @@ const passport = require('passport');
 const authorization = require('./utils/auth');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const logout = require('./public/js/logout');
 
 
 const PORT = process.env.PORT || 3001;
@@ -70,12 +71,28 @@ app.get('/google/callback',
     // console.log(res)
   });
 
-  //Log out route
-  app.get('/logout', (req, res) => {
-    req.session = null;
-    req.logout();
-    res.redirect('/');
-  })
+  //Log out route from Passport.js
+
+  app.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
+
+  // app.get('/logout', function(req, res){
+  //   req.session.logged_in = false;
+  //   res.redirect('/');
+  // });
+
+  // app.get('/logout', (req, res) => {
+  //   req.session = null;
+  //   req.logout();
+  //   res.redirect('/');
+  // })
 
   app.use(routes);
 
