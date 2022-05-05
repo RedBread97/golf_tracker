@@ -13,7 +13,7 @@ ScoreCard.init (
         },
         golfer_id: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            // allowNull: true,
             references: {
                 model: 'golfer',
                 key: 'id',

@@ -52,77 +52,62 @@
   </nav>
 
 
+{{#if user}}
+{{!-- user page when logged in --}}
+<div class="card" id="averages" style="width: 50%;">
+  <div class="card-body" id="average_card">
+    <h5 class="card-title">Average Round Score
+</h5>
+  </div>
+<a href="/api/scorecard">scorecard</a>
+<!-- three games cards -->
+<h2 id="topThree">Top Games</h2>
+<a href="/scorecard/{{scorecard.id}}"></a>
+<div class="container d-flex justify-content-around flex-wrap">
+{{!-- loop through data to create cards --}}
+  {{#each scorecard as |scorecard| }}
+  <div class="card" style="width: 18rem;">
+    <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
+    <div class="card-body">
+      <h5 class="card-title">Game {{scorecard.id}}</h5>
+      <p class="card-text">Total Score: {{scorecard.roundScore}}</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{else}}
 <!-- averages card -->
 <div class="card" id="averages" style="width: 50%;">
   <div class="card-body" id="average_card">
     <h5 class="card-title">Average Round Score</h5>
   </div>
 </div>
-
 <!-- three games cards -->
 <h2 id="topThree">Top Three Games</h2>
-
 <div class="container d-flex justify-content-around flex-wrap">
-
   <div class="card" style="width: 18rem;">
     <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">Game 1</h5>
+      <p class="card-text">You need to score your card to display your data. </p>
     </div>
   </div>
-
-  <!-- three games cards -->
-  <h2 id="topThree">Top Three Games</h2>
-
-  <div class="container d-flex justify-content-around flex-wrap">
-
-    <div class="card" style="width: 18rem;">
-      <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
-      <div class="card-body">
-        <h5 class="card-title">Game 1</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
-      <div class="card-body">
-        <h5 class="card-title">Game</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-  </div>
-
   <div class="card" style="width: 18rem;">
     <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-        card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">Game 2</h5>
+      <p class="card-text">You need to score your card to display your data. </p>
     </div>
   </div>
-
+  <div class="card" style="width: 18rem;">
+    <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
+    <div class="card-body">
+      <h5 class="card-title">Game 3</h5>
+      <p class="card-text">You need to score your card to display your data. </p>
+    </div>
+  </div>
 </div>
+{{/if}}
 
 {{!-- Modal code --}}
 
