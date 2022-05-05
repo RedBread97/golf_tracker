@@ -3,34 +3,34 @@
   <a href="/login">Login</a>
 </div>
 
-  {{!-- <div class="title">
-    <h1>Go Golfing!</h1>
-    <a href="/login">Login</a>
-  </div> --}}
+{{!-- <div class="title">
+  <h1>Go Golfing!</h1>
+  <a href="/login">Login</a>
+</div> --}}
 
-  <nav class="navbar navbar-expand-lg navbar-light " id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Home</a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#averages">Averages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#topThree">Top Three Games</a>
+<nav class="navbar navbar-expand-lg navbar-light " id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Home</a>
 
-      </div>
-      <button type="button" class="btn btn-info">Add a New Game</button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#averages">Averages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#topThree">Top Three Games</a>
+
     </div>
-    </div>
-      <button type="button" id="login-btn" href="/login" class="btn btn-info">Login</button>
-    </div>
-  </nav>
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#score-modal">Add a New
+      Game</button>
+  </div>
+  <button type="button" id="login-btn" href="/login" class="btn btn-info">Login</button>
+  </div>
+</nav>
 
 
 <!-- averages card -->
@@ -107,11 +107,11 @@
             <label for="FormControlInput3" class="form-label">Round Notes</label>
             <textarea class="form-control" id="notes" rows="3"></textarea>
           </div>
+          <div class="modal-footer form-group">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer form-group">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>

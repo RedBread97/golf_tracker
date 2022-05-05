@@ -25,14 +25,15 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/scorecard', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const dbScoreData = await ScoreCard.create({
             date: req.body.date,
-            course_name: req.body.coursename,
-            round_score: req.body.roundscore,
+            courseName: req.body.courseName,
+            roundScore: req.body.roundScore,
             notes: req.body.notes
         });
+        console.log(dbScoreData);
         res.status(200).json(dbScoreData)
     } catch (err) {
         console.log(err);
@@ -41,3 +42,4 @@ router.post('/scorecard', async (req, res) => {
     }
 });
 
+module.exports = router;
