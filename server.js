@@ -58,8 +58,16 @@ app.get('/google',
 app.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/failed' }),
   function(req, res) {
+    console.log("session",req.session)
+    req.session.save(() => {
+      // req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.redirect('/');
+      // res.status(200).json(userData);
+    });
     // Successful authentication, redirect home.
-    res.redirect('/');
+    // console.log ("user FEEDBACK",req.user)
+    // console.log(res)
   });
 
   //Log out route
