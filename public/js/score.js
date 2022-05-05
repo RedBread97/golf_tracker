@@ -15,23 +15,32 @@ const newFormHandler = async (event) => {
             },
         });
 
-        if (response.ok) {
-            document.location.replace('/homepage');
-        } else {
-            alert('Failed to create score');
-        }
+        // if (response.ok) {
+        //     document.location.replace('/homepage');
+        // } else {
+        //     alert('Failed to create score');
+        // }
     }
 };
 
+document.querySelector('.new-scorecard-form').addEventListener('submit', newFormHandler);
+// const getDatePickerTitle = elem => {
+//     const label = elem.nextElementSibling;
+//     let titleText = '';
+//     if (label && label.tagName === 'LABEL') {
+//       titleText = label.textContent;
+//     } else {
+//       titleText = elem.getAttribute('aria-label') || '';
+//     }
+//     return titleText;
+//   }
+  
+//   const elems = document.querySelectorAll('.datepicker_input');
+//   for (const elem of elems) {
+//     const datepicker = new Datepicker(elem, {
+//       'format': 'mm/dd/yyyy',
+//       title: getDatePickerTitle(elem)
+//     });
+//   }     
 
-
-document
-  .querySelector('.new-scorecard-form')
-  .addEventListener('submit', newFormHandler);
-
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
+document.querySelector('.new-scorecard-form').addEventListener('submit', newFormHandler);
