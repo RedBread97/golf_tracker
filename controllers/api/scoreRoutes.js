@@ -2,21 +2,19 @@ const router = require('express').Router();
 const { Golfer, ScoreCard } = require('../../models');
 
 router.get('/', async (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
+    if (!req.session.passport) {
+        res.redirect('/');
     } else {
         try {
             const scoreData = await ScoreCard.findAll({
                 include: [{ model: Golfer }]
             });
 
-            const scorecard = scoreData.map((score) =>
-                score.get({ plain: true })
-            );
-
-            res.render('scorecard', {
+            const scorecard = scoreData.map(score => score.get({ plain: true }));
+            console.log(scorecard);
+            res.render('homepage', {
                 scorecard,
-                loggedIn: req.sessionOptions.loggedIn,
+                user: req.session.passport.user,
             });
         } catch (err) {
             console.log(err)
@@ -28,6 +26,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const dbScoreData = await ScoreCard.create({
+            golfer_id: req.session.passport.user,
             date: req.body.date,
             courseName: req.body.courseName,
             roundScore: req.body.roundScore,
