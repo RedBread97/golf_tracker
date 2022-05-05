@@ -20,7 +20,8 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy ({
     clientID: "276951669297-sq3ueesalenosvjqbj5npfaiko1kvspi.apps.googleusercontent.com",
     clientSecret: "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",
-    callbackURL: "http://localhost:3001/google/callback" //==== DEFINE
+    // callbackURL: "http://localhost:3001/google/callback" //==== DEFINE
+    callbackURL: "https://morning-bastion-43801.herokuapp.com/google/callback"
 }, 
 function(accessToken, refreshToken, profile, done) {
     //use profile info (profile id) to check if the user is registered in the DB
