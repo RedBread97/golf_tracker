@@ -18,8 +18,8 @@ passport.deserializeUser(function(id, done) {
 
 //Passport use function to pass new Google Strategy
 passport.use(new GoogleStrategy ({
-    clientID: "276951669297-sq3ueesalenosvjqbj5npfaiko1kvspi.apps.googleusercontent.com",
-    clientSecret: "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",
+    clientID: "276951669297-thf9g4tj9trdknjqu09i3u3j71l4975l.apps.googleusercontent.com",
+    clientSecret: "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",
     // callbackURL: "http://localhost:3001/google/callback" //==== DEFINE
     callbackURL: "https://morning-bastion-43801.herokuapp.com/google/callback"
 }, 
