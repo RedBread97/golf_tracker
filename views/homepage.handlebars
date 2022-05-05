@@ -23,9 +23,27 @@
       </div>
       <button type="button" class="btn btn-info">Add a New Game</button>
     </div>
+    {{#if user}}
+    <a>Log Out</a>
+    {{else}}
     </div>
-      <button type="button" id="login-btn" href="/login" class="btn btn-info">Login</button>
+      <a
+        class="btn btn-outline-light"
+        href="/google"
+        role="button"
+        style="text-transform:none; 
+        background-color:#c7c6c6"
+      >
+        <img
+          width="20px"
+          style="margin-bottom:3px; margin-right:5px"
+          alt="Google sign-in"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+        />
+        Sign in with Google
+      </a>
     </div>
+    {{/if}}
   </nav>
 
 
@@ -44,7 +62,7 @@
     <div class="card" style="width: 18rem;">
       <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Game 1</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -54,7 +72,7 @@
     <div class="card" style="width: 18rem;">
       <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Game</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
           card's
           content.</p>
