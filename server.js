@@ -52,7 +52,7 @@ app.use(session(sess));
 app.get('/failed', (req, res) => res.send("You failed to log in"));
 // app.get('/good', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.displayName}`))
 
-app.get('/login',
+app.get('/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })) //Add photo?
 
 app.get('/google/callback', 
