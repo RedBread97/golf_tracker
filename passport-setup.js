@@ -17,15 +17,23 @@ passport.deserializeUser(function(id, done) {
 });
 
 passport.use(new PassportHerokuAddon({
-    sso_salt: process.env.SSO_SALT
+    // sso_salt: process.env.SSO_SALT
   }));
   
-  app.get('/heroku/resources/:id',
-    passport.authenticate('heroku-addon'),
-    function(req, res) {
-      res.redirect("/");
-    });
+//   app.get('/heroku/resources/:id',
+//     passport.authenticate('heroku-addon'),
+//     function(req, res) {
+//       res.redirect("/");
+//     });
+app.get('/google/heroku',
+  passport.authenticate('heroku'));
 
+app.get('/google/heroku/callback',
+  passport.authenticate('heroku', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 //Passport use function to pass new Google Strategy
 passport.use(new GoogleStrategy ({
