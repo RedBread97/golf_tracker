@@ -22,8 +22,8 @@ passport.use(new PassportHerokuAddon({
   
   app.get('/heroku/resources/:id',
     passport.authenticate('heroku-addon'),
-    function(request, response) {
-      response.redirect("/");
+    function(req, res) {
+      res.redirect("/");
     });
 
 
