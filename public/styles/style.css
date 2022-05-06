@@ -18,13 +18,16 @@ body {
 }
 
 #title  { 
-    background-image: url('./Assets/AdobeStock_182403935.jpeg')!important;
-    background-size: 100%;
-    background-repeat: none;
     text-align: center;
     color: var(--charleston-green);
     background-color: var(--lincoln-green);
 
+}
+
+.jumbotron{
+    background-image: url(http://photos.app.goo.gl/HGLfRZMCVGvRfzQR6)!important;
+    background-size: 100%;
+    background-repeat: none;
 }
 
 #title>h1{
