@@ -1,12 +1,11 @@
 
 {{#if user}}
 {{!-- user page when logged in --}}
-<div class="card" id="averages" style="width: 50%;">
+<div class="card" id="averages" style="width: 100%;">
   <div class="card-body" id="average_card">
-    <h5 class="card-title">Average Round Score
-</h5>
+    <h5 class="card-title">Average Round Score</h5>
   </div>
-<a href="/api/scorecard"   class="btn btn-info">scorecard</a>
+<a href="/api/scorecard"   class="btn btn-info">Scorecard</a>
 <!-- three games cards -->
 <h2 id="topThree" style="text-align: center;">Top Games</h2>
 <a href="/scorecard/{{scorecard.id}}"></a>
@@ -14,7 +13,7 @@
 {{!-- loop through data to create cards --}}
   {{#each scorecard as |scorecard| }}
   <div class="card" style="width: 18rem;">
-    <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Socre Card Goes Here">
+    <img src="./Assets/score card place holder.jpg" class="card-img-top" alt="Score Card Goes Here">
     <div class="card-body">
       <h5 class="card-title">Game {{scorecard.id}}</h5>
       <p class="card-text">Total Score: {{scorecard.roundScore}}</p>
