@@ -1,5 +1,6 @@
 const res = require('express/lib/response');
 const passport = require('passport');
+var PassportHerokuAddon = require('passport-heroku-addon');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const models = require("./models")
 const Golfer = models.Golfer
@@ -14,6 +15,16 @@ passport.deserializeUser(function(id, done) {
         done(null, user);
     });
 });
+
+passport.use(new PassportHerokuAddon({
+    sso_salt: process.env.SSO_SALT
+  }));
+  
+  app.get('/heroku/resources/:id',
+    passport.authenticate('heroku-addon'),
+    function(request, response) {
+      response.redirect("/");
+    });
 
 
 //Passport use function to pass new Google Strategy

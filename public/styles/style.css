@@ -1,0 +1,52 @@
+/* CSS HEX */
+:root{
+--charleston-green: #152528ff;
+--midnight-green-eagle-green: #08485eff;
+--pacific-blue: #3cb0cdff;
+--sky-blue: #7cd5f3ff;
+--non-photo-blue: #b4e7f8ff;
+--mint-green: #adffbcff;
+--medium-spring-green: #1bee9aff;
+--emerald: #21c063ff;
+--slimy-green: #229631ff;
+--lincoln-green: #0c5a23ff;
+}
+
+body {
+    text-align: center;
+    align-items: center;
+}
+
+#title  { 
+    text-align: center;
+    color: var(--charleston-green);
+    background-color: var(--lincoln-green);
+
+}
+
+.jumbotron{
+    background-image: url(http://photos.app.goo.gl/HGLfRZMCVGvRfzQR6)!important;
+    background-size: 100%;
+    background-repeat: none;
+}
+
+#title>h1{
+    padding: 3%;
+}
+
+.navbar{ 
+    background-color: var(--lincoln-green);
+}
+
+.btn {
+    color: var(--charleston-green);
+    background-color: var(--sky-blue);
+}
+
+#topThree {
+    margin-top:30px;
+    margin-bottom: 20px;
+} 
+#cards {
+    margin-bottom: 30px;
+}
