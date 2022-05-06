@@ -12,34 +12,38 @@
 --lincoln-green: #0c5a23ff;
 }
 
+body {
+    text-align: center;
+    align-items: center;
+}
 
-.title  { 
-    background-image: url('./AdobeStock_182403935.jpeg')!important;
-    height:100px ;
+#title  { 
+    background-image: url('./Assets/AdobeStock_182403935.jpeg')!important;
     background-size: 100%;
     background-repeat: none;
     text-align: center;
-    color: var(--mint-green);
+    color: var(--charleston-green);
     background-color: var(--lincoln-green);
 
 }
 
-.title>h1{
+#title>h1{
     padding: 3%;
 }
 
-#navbar{ 
+.navbar{ 
     background-color: var(--lincoln-green);
 }
 
-#navbar>a{
-    color:var(--mint-green)!important;
+.btn {
+    color: var(--charleston-green);
+    background-color: var(--sky-blue);
 }
 
-#averages{
-    align-items: center !important;
-}
-
-#average_card{
-    margin:auto;
+#topThree {
+    margin-top:30px;
+    margin-bottom: 20px;
+} 
+#cards {
+    margin-bottom: 30px;
 }
